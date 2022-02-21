@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="race_user_app.pilot_model_from_inherit">
+      <field name="name">Pilot From</field>
+      <field name="model">race_app.pilot_model</field>
+      <field name="mode">primary</field>
+      <field name="priority" eval="1"></field>
+      <field name="inherit_id" ref="race_app.pilot_model_form"/>
+      <field name="arch" type="xml">
+
+        <field name="surname" position="after">
+          <field name="odoo_user"/>
+        </field>
+
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="race_user_app.action_window">
+      <field name="name">race_user_app window</field>
+      <field name="res_model">race_user_app.race_user_app</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="race_user_app.action_server">
+      <field name="name">race_user_app server</field>
+      <field name="model_id" ref="model_race_user_app_race_user_app"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="race_user_app" id="race_user_app.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="race_user_app.menu_1" parent="race_user_app.menu_root"/>
+    <menuitem name="Menu 2" id="race_user_app.menu_2" parent="race_user_app.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="race_user_app.menu_1_list" parent="race_user_app.menu_1"
+              action="race_user_app.action_window"/>
+    <menuitem name="Server to list" id="race_user_app" parent="race_user_app.menu_2"
+              action="race_user_app.action_server"/>
+-->
+  </data>
+</odoo>
